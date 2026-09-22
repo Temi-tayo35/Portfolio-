@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="toggle-buttons">
+    <button id="signInBtn" class="active" onclick="showForm('signin')">Sign In</button>
+    <button id="signUpBtn" onclick="showForm('signup')">Sign Up</button>
+  </div>
+
+  <form id="signinForm" class="form-box">
+    <h2>Welcome Back</h2>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <button type="submit">Sign In</button>
+  </form>
+
+  <form id="signupForm" class="form-box hidden">
+    <h2>Create Account</h2>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <button type="submit">Sign Up</button>
+  </form>
+</div>
+
+<script>
+function showForm(type) {
+  const signin = document.getElementById('signinForm');
+  const signup = document.getElementById('signupForm');
+  const signinBtn = document.getElementById('signInBtn');
+  const signupBtn = document.getElementById('signUpBtn');
+
+  if (type === 'signin') {
+    signin.classList.remove('hidden');
+    signup.classList.add('hidden');
+    signinBtn.classList.add('active');
+    signupBtn.classList.remove('active');
+  } else {
+    signup.classList.remove('hidden');
+    signin.classList.add('hidden');
+    signupBtn.classList.add('active');
+    signinBtn.classList.remove('active');
+  }
+}
+</script>
+
+</body>
+</html>
